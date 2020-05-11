@@ -73,8 +73,8 @@ export default class Board extends React.Component {
                     Piece Shape:
                     <select value={this.state.pieceShape} onChange={this.handlePieceShapeChange}>
                         <option value="circle">Circle</option>
-                        <option value="square">Circle</option>
-                        <option value="triangle">Circle</option>
+                        <option value="square">Square</option>
+                        <option value="triangle">Triangle</option>
                     </select>
                 </label>
                 <label>
