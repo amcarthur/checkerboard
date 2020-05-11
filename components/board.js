@@ -6,6 +6,8 @@ export default class Board extends React.Component {
     constructor() {
         super();
         this.handleCellCountChange = this.handleCellCountChange.bind(this);
+        this.handlePieceColorChange = this.handlePieceColorChange.bind(this);
+        this.handlePieceShapeChange = this.handlePieceShapeChange.bind(this);
         this.state = {
             cellCount: "8",
             pieceShape: 'circle',
