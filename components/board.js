@@ -18,13 +18,24 @@ export default class Board extends React.Component {
 
     render() {
         // Create a specified amount of cell components
-        let cells = [];
+        let cellRows = [];
         for(let i = 0; i < this.state.cellCount; ++i) {
-            cells.push(<Cell />)
+            let cells = [];
+            for(let k = 0; k < this.state.cellCount; ++k) {
+                cells.push(<Cell key={i.toString() + k.toString()} row={i} />)
+            }
+            cellRows.push(<div className="row">{cells}</div>);
         }
         return (
             <div>
-                {cells}
+                <div className="board">
+                    {cellRows}
+                    <style jsx>{`
+                      .board {
+                        display: flex;
+                      }
+                    `}</style>
+                </div>
                 <label>
                     Cell Count:
                     <input type="text" value={this.state.cellCount} onChange={this.handleCellCountChange} />
