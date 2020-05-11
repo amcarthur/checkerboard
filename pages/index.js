@@ -1,27 +1,8 @@
-import P from '../components/paragraph'
-import Post from '../components/post'
+import Board from "../components/board";
 
 export default () => (
   <div className="main">
-    <Post title="My first blog post">
-      <P>Hello there</P>
-      <P>This is an example of a componentized blog post</P>
-    </Post>
-
-    <hr />
-
-    <Post title="My second blog post">
-      <P>Hello there</P>
-      <P>This is another example.</P>
-      <P>Wa-hoo!</P>
-    </Post>
-
-    <hr />
-
-    <Post title="The final blog post">
-      <P>C’est fin</P>
-    </Post>
-
+      <Board />
     <style jsx>{`
       .main {
         margin: auto;
