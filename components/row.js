@@ -3,7 +3,7 @@ import Piece from './piece';
 import React from "react";
 
 export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => {
-  if (isTopRow || isBottomRow) {
+  if (isTopRow === "true" || isBottomRow === "true") {
     return (
         <div className="row">
           {children.map(c => <div className="cellWithPiece">

@@ -31,11 +31,11 @@ export default class Board extends React.Component {
             }
             if (i <= 1) {
                 // Top two rows
-                cellRows.push(<Row isTopRow={true} pieceShape={this.state.topTwoRowsShape} pieceColor={this.state.topTwoRowsColor}>{cells}</Row>);
+                cellRows.push(<Row isTopRow="true" pieceShape={this.state.topTwoRowsShape} pieceColor={this.state.topTwoRowsColor}>{cells}</Row>);
             }
             else if (i >= this.state.cellCount - 1) {
                 // Bottom two rows
-                cellRows.push(<Row isBottomRow={true} pieceShape={this.state.bottomTwoRowsShape} pieceColor={this.state.bottomTwoRowsColor}>{cells}</Row>);
+                cellRows.push(<Row isBottomRow="true" pieceShape={this.state.bottomTwoRowsShape} pieceColor={this.state.bottomTwoRowsColor}>{cells}</Row>);
             } else {
                 // Rows in-between
                 cellRows.push(<Row>{cells}</Row>);
