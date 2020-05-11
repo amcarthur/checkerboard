@@ -2,7 +2,7 @@ import Cell from './cell';
 import Piece from './piece';
 import React from "react";
 
-export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => {
+export default ({ even, isTopRow, isBottomRow, pieceShape, pieceColor, children }) => {
   if (isTopRow || isBottomRow) {
     return (
         <div className="row">
@@ -21,6 +21,13 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
                       display: flex;
                       }
                       
+                      .cellContainer:nth-child(odd) {
+                        background: ${even ? '#000' : '#fff'};
+                        }
+                        .cellContainer:nth-child(even) {
+                            background: ${even ? '#fff' : '#000'};
+                        }
+                      
                     `}</style>
         </div>
     );
@@ -28,7 +35,10 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
     return (
         <div className="cellContainer">
             <div className="row">
-              {children}
+                {children.map(c => <div className="cellContainer">
+                    {c}
+
+                </div>)}
                 <style jsx>{`
                   
                    .cellContainer {
@@ -38,6 +48,13 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
                   .row {
                     display: flex;
                   }
+                  
+                  .cellContainer:nth-child(odd) {
+                        background: ${even ? '#000' : '#fff'};
+                        }
+                        .cellContainer:nth-child(even) {
+                            background: ${even ? '#fff' : '#000'};
+                        }
                 `}</style>
             </div>
         </div>

@@ -43,14 +43,14 @@ export default class Board extends React.Component {
             }
             if (i <= 1) {
                 // Top two rows
-                cellRows.push(<Row isTopRow={true} pieceShape={this.state.pieceShape} pieceColor={this.state.pieceColor}>{cells}</Row>);
+                cellRows.push(<Row even={(i % 2 === 0)} isTopRow={true} pieceShape={this.state.pieceShape} pieceColor={this.state.pieceColor}>{cells}</Row>);
             }
             else if (i >= this.state.cellCount - 2) {
                 // Bottom two rows
-                cellRows.push(<Row isBottomRow={true} pieceShape={this.state.pieceShape} pieceColor={this.state.pieceColor}>{cells}</Row>);
+                cellRows.push(<Row even={(i % 2 === 0)} isBottomRow={true} pieceShape={this.state.pieceShape} pieceColor={this.state.pieceColor}>{cells}</Row>);
             } else {
                 // Rows in-between
-                cellRows.push(<Row>{cells}</Row>);
+                cellRows.push(<Row even={(i % 2 === 0)}>{cells}</Row>);
             }
         }
         return (
