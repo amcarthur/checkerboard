@@ -1,5 +1,6 @@
 import React from 'react'
 import Cell from './cell'
+import Row from './row';
 
 export default class Board extends React.Component {
     constructor() {
@@ -24,7 +25,7 @@ export default class Board extends React.Component {
             for(let k = 0; k < this.state.cellCount; ++k) {
                 cells.push(<Cell key={i.toString() + k.toString()} row={i} />)
             }
-            cellRows.push(<div className="row">{cells}</div>);
+            cellRows.push(<Row>{cells}</Row>);
         }
         return (
             <div>
