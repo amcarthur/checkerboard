@@ -55,15 +55,6 @@ export default class Board extends React.Component {
             <div>
                 <div className="board">
                     {cellRows}
-                    <style jsx>{`
-                      .board {
-                        display: flex;
-                      }
-                      
-                      .row {
-                        display: flex;
-                      }
-                    `}</style>
                 </div>
                 <label>
                     Cell Count:

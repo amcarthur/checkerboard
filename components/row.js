@@ -8,7 +8,6 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
         <div className="row">
           {children.map(c => <div className="cellWithPiece">
             {c}
-              {console.log(isTopRow)}
           <Piece shape={pieceShape} color={pieceColor}/>
 
           </div>)}
@@ -26,18 +25,16 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
         </div>
     );
   } else {
+      console.log('hjreer');
     return (
         <div className="row">
+          {children}
             <style jsx>{`
-                      .board {
-                        display: flex;
-                      }
                       
                       .row {
                         display: flex;
                       }
                     `}</style>
-          {children}
         </div>
     );
   }
