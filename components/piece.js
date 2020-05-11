@@ -10,7 +10,7 @@ export default ({ shape, color, children }) => {
                 height: 50px;
               width: 50px;
               border-radius: 50%;
-              border-color: ${color};
+              background: ${color};
               }
               
               .piece-triangle {

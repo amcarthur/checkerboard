@@ -11,7 +11,7 @@ export default class Board extends React.Component {
             topTwoRowsShape: 'circle',
             topTwoRowsColor: 'red',
             bottomTwoRowsShape: 'circle',
-            bottomTwoRowsColor: 'black'
+            bottomTwoRowsColor: 'blue'
         };
     }
 
@@ -33,7 +33,7 @@ export default class Board extends React.Component {
                 // Top two rows
                 cellRows.push(<Row isTopRow="true" pieceShape={this.state.topTwoRowsShape} pieceColor={this.state.topTwoRowsColor}>{cells}</Row>);
             }
-            else if (i >= this.state.cellCount - 1) {
+            else if (i >= this.state.cellCount - 2) {
                 // Bottom two rows
                 cellRows.push(<Row isBottomRow="true" pieceShape={this.state.bottomTwoRowsShape} pieceColor={this.state.bottomTwoRowsColor}>{cells}</Row>);
             } else {
@@ -50,8 +50,8 @@ export default class Board extends React.Component {
                         display: flex;
                       }
                       
-                      .cellWithPiece {
-                        position: relative;
+                      .row {
+                        display: flex;
                       }
                     `}</style>
                 </div>
