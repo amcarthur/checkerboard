@@ -10,7 +10,7 @@ export default ({ shape, color, children }) => {
                 height: 50px;
               width: 50px;
               border-radius: 50%;
-              border-color: blue;
+              border-color: ${color};
               }
               
               .piece-triangle {
@@ -18,13 +18,14 @@ export default ({ shape, color, children }) => {
                 height: 0;
                 border-left: 25px solid transparent;
                 border-right: 25px solid transparent;
-                border-bottom: 50px solid blue;
+                border-bottom: 50px solid ${color};
               }
               
               .piece-square {
                 height: 50px;
                 width: 50px;
                 border: 1px solid blue;
+                background: ${color}
               }
             `}</style>
     );
