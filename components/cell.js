@@ -4,36 +4,39 @@ export default ({ row, children }) => {
         return (
             <div className="cell">
                 <style jsx>{`
-      .cell {
-        width: 100px;
-        height: 100px;
-      }
-      
-      .cell:nth-child(odd) {
-        background: #000;
-        }
-        .cell:nth-child(even) {
-            background: #fff;
-        }
-    `}</style>
+                      .cell {
+                        width: 100px;
+                        height: 100px;
+                      }
+                      
+                      .cellContainer:nth-child(odd) .cell {
+                        background: #000;
+                        }
+                        .cellContainer:nth-child(even) .cell {
+                            background: #fff;
+                        }
+                        
+                    `}</style>
             </div>
         );
     } else {
         return (
             <div className="cell">
                 <style jsx>{`
-      .cell {
-        width: 100px;
-        height: 100px;
-      }
-      
-      .cell:nth-child(odd) {
-        background: #fff;
-        }
-        .cell:nth-child(even) {
-            background: #000;
-        }
-    `}</style>
+                      .cell {
+                        width: 100px;
+                        height: 100px;
+                      }
+                      
+                      .cellContainer:nth-child(odd) .cell {
+                        background: #fff;
+                        }
+                        .cellContainer:nth-child(even) .cell {
+                            background: #000;
+                        }
+                        
+                        
+                    `}</style>
             </div>
         );
     }

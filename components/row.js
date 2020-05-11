@@ -6,14 +6,14 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
   if (isTopRow || isBottomRow) {
     return (
         <div className="row">
-          {children.map(c => <div className="cellWithPiece">
+          {children.map(c => <div className="cellContainer">
             {c}
           <Piece shape={pieceShape} color={pieceColor}/>
 
           </div>)}
 
             <style jsx>{`
-                      .cellWithPiece {
+                      .cellContainer {
                       position: relative;
                       }
                       
@@ -25,16 +25,21 @@ export default ({ isTopRow, isBottomRow, pieceShape, pieceColor, children }) => 
         </div>
     );
   } else {
-      console.log('hjreer');
     return (
-        <div className="row">
-          {children}
-            <style jsx>{`
-                      
-                      .row {
-                        display: flex;
-                      }
-                    `}</style>
+        <div className="cellContainer">
+            <div className="row">
+              {children}
+                <style jsx>{`
+                  
+                   .cellContainer {
+                  position: relative;
+                  }
+                  
+                  .row {
+                    display: flex;
+                  }
+                `}</style>
+            </div>
         </div>
     );
   }
