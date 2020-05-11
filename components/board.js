@@ -7,17 +7,17 @@ export default class Board extends React.Component {
         super();
         this.handleCellCountChange = this.handleCellCountChange.bind(this);
         this.state = {
-            cellCount: "8"
+            cellCount: "8",
+            topTwoRowsShape: 'circle',
+            topTwoRowsColor: 'red',
+            bottomTwoRowsShape: 'circle',
+            bottomTwoRowsColor: 'black'
         };
     }
 
     handleCellCountChange(event) {
         this.setState({
-            cellCount: event.target.value,
-            topTwoRowsShape: 'circle',
-            topTwoRowsColor: 'red',
-            bottomTwoRowsShape: 'circle',
-            bottomTwoRowsColor: 'black'
+            cellCount: event.target.value
         })
     }
 
