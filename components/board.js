@@ -13,7 +13,11 @@ export default class Board extends React.Component {
 
     handleCellCountChange(event) {
         this.setState({
-            cellCount: event.target.value
+            cellCount: event.target.value,
+            topTwoRowsShape: 'circle',
+            topTwoRowsColor: 'red',
+            bottomTwoRowsShape: 'circle',
+            bottomTwoRowsColor: 'black'
         })
     }
 
@@ -25,7 +29,17 @@ export default class Board extends React.Component {
             for(let k = 0; k < this.state.cellCount; ++k) {
                 cells.push(<Cell key={i.toString() + k.toString()} row={i} />)
             }
-            cellRows.push(<Row>{cells}</Row>);
+            if (i <= 1) {
+                // Top two rows
+                cellRows.push(<Row isTopRow={true} cellShape={this.state.topTwoRowsShape} cellColor={this.state.topTwoRowsColor}>{cells}</Row>);
+            }
+            else if (i >= this.state.cellCount - 1) {
+                // Bottom two rows
+                cellRows.push(<Row isBottomRow={true} cellShape={this.state.topTwoRowsShape} cellColor={this.state.topTwoRowsColor}>{cells}</Row>);
+            } else {
+                // Rows in-between
+                cellRows.push(<Row>{cells}</Row>);
+            }
         }
         return (
             <div>
@@ -34,6 +48,10 @@ export default class Board extends React.Component {
                     <style jsx>{`
                       .board {
                         display: flex;
+                      }
+                      
+                      .cellWithPiece {
+                        position: relative;
                       }
                     `}</style>
                 </div>
